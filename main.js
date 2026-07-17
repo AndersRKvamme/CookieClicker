@@ -1,20 +1,23 @@
 // console.log ("Hello log.js!")
 let amountCookies   = 0;
-let increaseCookies = 1
-let clickCost       = 4
-let cookieTimer     = 0
-let grandmaCost     = 10
-let grandmaAmount   = 0
+let increaseCookies = 1;
+let clickCost       = 4;
+let cookieTimer     = 0;
+let grandmaCost     = 10;
+let grandmaAmount   = 0;
 // let grandmaIncrease = 1
-let grandmaIncrease = 1
-let grandmaUpgradeCost = 150
-let minersAmount    = 0
-let minersCost      = 50
-let minersIncrease   = 5
+let grandmaIncrease = 0.3;
+let grandmaUpgradeCost = 150;
+let minersAmount    = 0;
+let minersCost      = 50;
+let minersIncrease  = 2;
+let roundedCookies  = 0;
+
+
 
 function makeDonuts(){
     amountCookies = amountCookies+increaseCookies;
-    document.getElementById("Cookies").textContent = `Cookies: ${amountCookies}`
+    document.getElementById("Cookies").textContent = `Cookies: ${amountCookies.toFixed(2)}`
     console.log(amountCookies)
 }
 
@@ -23,7 +26,7 @@ function cookieIncreaseFunction(){
         increaseCookies = increaseCookies +1;
         amountCookies = amountCookies - clickCost;
         console.log(increaseCookies);
-            document.getElementById("Cookies").textContent = `Cookies: ${amountCookies}`
+            document.getElementById("Cookies").textContent = `Cookies: ${amountCookies.toFixed(2)}`
             console.log(amountCookies)
         clickCost = clickCost*2
         console.log(clickCost)
@@ -44,7 +47,7 @@ function grandmaTimerFunction(){
         console.log(`You have ${grandmaAmount} grandmas.`);
             document.getElementById("cookieButton").textContent = (`Click for ${increaseCookies} cookies!`)
             document.getElementById("grandmaTimer").textContent = (`You have ${grandmaAmount} grandmas! ${grandmaCost} Cs.`)
-            document.getElementById("Cookies").textContent = `Cookies: ${amountCookies}`
+            document.getElementById("Cookies").textContent = `Cookies: ${amountCookies.toFixed(2)}`
             grandmaCooking()
 
        } 
@@ -63,7 +66,7 @@ function minerTimerFunction(){
         console.log(`You have ${minersAmount} miners.`);
             document.getElementById("cookieButton").textContent = (`Click for ${increaseCookies} cookies!`)
             document.getElementById("minerTimer").textContent = (`You have ${minersAmount} miners! ${minersCost} Cs.`)
-            document.getElementById("Cookies").textContent = (`Cookies: ${amountCookies}`)
+            document.getElementById("Cookies").textContent = (`Cookies: ${amountCookies.toFixed(2)}`)
             minerCooking()
 
        } 
@@ -75,26 +78,27 @@ function minerTimerFunction(){
 
 function grandmaCooking(){
     amountCookies = amountCookies + (grandmaAmount*grandmaIncrease)
-    document.getElementById("Cookies").textContent = `Cookies: ${amountCookies}`
+    document.getElementById("Cookies").textContent = `Cookies: ${amountCookies.toFixed(2)}`
 setInterval(function(){
     amountCookies = amountCookies + (grandmaAmount*grandmaIncrease)   
-    document.getElementById("Cookies").textContent = `Cookies: ${amountCookies}`
+    document.getElementById("Cookies").textContent = `Cookies: ${amountCookies.toFixed(2)}`
 }, 1000)
+
 }
 
 function minerCooking(){
     amountCookies = amountCookies + (minersAmount*minersIncrease)
-    document.getElementById("Cookies").textContent = `Cookies: ${amountCookies}`
+    document.getElementById("Cookies").textContent = `Cookies: ${amountCookies.toFixed(2)}`
 setInterval(function(){
     amountCookies = amountCookies + (minersAmount*minersIncrease)   
-    document.getElementById("Cookies").textContent = `Cookies: ${amountCookies}`
+    document.getElementById("Cookies").textContent = `Cookies: ${amountCookies.toFixed(2)}`
 }, 1000)
 }
 
 function upgradeGrandma(){
     if (amountCookies   >= grandmaUpgradeCost){
         amountCookies   = amountCookies-grandmaUpgradeCost
-        grandmaIncrease = grandmaIncrease+1
+        grandmaIncrease = grandmaIncrease+0.3
         grandmaUpgradeCost = grandmaUpgradeCost*2
         document.getElementById("upgradeGrandma").textContent= (`Grandmas make ${grandmaIncrease} cookies. Price is ${grandmaUpgradeCost}.`)
         console.log(`Each Grandma produces ${grandmaIncrease}`);

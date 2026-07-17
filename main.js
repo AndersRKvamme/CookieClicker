@@ -16,13 +16,13 @@ let upgradeGraAMinCost  = 800;
 let upgradeMinersCost = 200;
 
 
-function makeDonuts(){
+function makeDonuts(){ // the default make cookie function
     amountCookies = amountCookies+increaseCookies;
     document.getElementById("Cookies").textContent = `Cookies: ${amountCookies.toFixed(2)}`
     console.log(amountCookies)
 }
 
-function cookieIncreaseFunction(){
+function cookieIncreaseFunction(){ // Clicking power
     if(amountCookies >= clickCost) {
         increaseCookies = increaseCookies +1;
         amountCookies = amountCookies - clickCost;
@@ -39,7 +39,7 @@ else{
 }
 }
 
-function grandmaTimerFunction(){
+function grandmaTimerFunction(){ // Click on button function
     if (amountCookies >= grandmaCost){
         amountCookies = amountCookies - grandmaCost
         grandmaAmount = grandmaAmount +1
@@ -58,6 +58,7 @@ function grandmaTimerFunction(){
        
 }
 
+//  former iteration of it, cba going through to see which version to keep so commentating it out just in casze
 // function minerTimerFunction(){
 //     if (amountCookies >= minersCost){
 //         amountCookies = amountCookies - minersCost
@@ -75,7 +76,7 @@ function grandmaTimerFunction(){
        
 // }
 
-function minerTimerFunction(){
+function minerTimerFunction(){ // Click on miner button function
     if (amountCookies >= minersCost){
         amountCookies = amountCookies - minersCost
         minersAmount = minersAmount +1
@@ -93,7 +94,7 @@ function minerTimerFunction(){
        
     }
 
-function grandmaCooking(){
+function grandmaCooking(){ // Timer function, referenced in grandmaTimerFunction() to start the interval and to add more grandmas
     amountCookies = amountCookies + (grandmaAmount*grandmaIncrease)
     document.getElementById("Cookies").textContent = `Cookies: ${amountCookies.toFixed(2)}`
 setInterval(function(){
@@ -103,7 +104,7 @@ setInterval(function(){
 
 }
 
-function minerCooking(){
+function minerCooking(){ // Timer function, referenced in minerTimerFunction() to start the interval and to add more miners
     amountCookies = amountCookies + (minersAmount*minersIncrease)
     document.getElementById("Cookies").textContent = `Cookies: ${amountCookies.toFixed(2)}`
 setInterval(function(){
@@ -112,7 +113,7 @@ setInterval(function(){
 }, 1000)
 }
 
-function upgradeMiners(){
+function upgradeMiners(){ // Improve miner gain button. It is different from the Grandma version as it didn't work, but I have no idea why
     if (minersAmount>=1){
     if (amountCookies   >= minersCost){
         amountCookies   = amountCookies-upgradeMinersCost
@@ -131,7 +132,7 @@ else {
 }}
 
 
-function upgradeGrandma(){
+function upgradeGrandma(){ // See upgradeMiners(). Has less function thhan the miner version, but this one somehow works.
     if (amountCookies   >= grandmaUpgradeCost){
         amountCookies   = amountCookies-grandmaUpgradeCost
         grandmaIncrease = grandmaIncrease+0.3
@@ -145,7 +146,8 @@ else {
 }
     }
 
-function upgradeGrandmaAndMiners(){
+function upgradeGrandmaAndMiners(){ 
+    // First attempt of one button upgrade multiple cooks. Simple version could just call the functions to upgrade, but this is x7.
     if (amountCookies >= upgradeGraAMinCost){
         amountCookies   = amountCookies - upgradeGraAMinCost
         upgradeGraAMinCost = upgradeGraAMinCost*2

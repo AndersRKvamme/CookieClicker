@@ -13,6 +13,7 @@ let minersCost      = 50;
 let minersIncrease  = 2;
 let roundedCookies  = 0;
 let upgradeGraAMinCost  = 800;
+let upgradeMinersCost = 200;
 
 
 function makeDonuts(){
@@ -57,6 +58,23 @@ function grandmaTimerFunction(){
        
 }
 
+// function minerTimerFunction(){
+//     if (amountCookies >= minersCost){
+//         amountCookies = amountCookies - minersCost
+//         minersAmount = minersAmount +1
+//         minersCost = minersCost*2
+//         console.log(minersCost);
+//         console.log(`You have ${minersAmount} miners.`);
+//             document.getElementById("cookieButton").textContent = (`Click for ${increaseCookies} cookies!`)
+//             document.getElementById("minerTimer").textContent = (`You have ${minersAmount} miners! ${minersCost} Cs.`)
+//             document.getElementById("Cookies").textContent = (`Cookies: ${amountCookies.toFixed(2)}`)
+//        } 
+//        else {
+//         console.log(`Need ${minersCost}`)
+//        }
+       
+// }
+
 function minerTimerFunction(){
     if (amountCookies >= minersCost){
         amountCookies = amountCookies - minersCost
@@ -66,15 +84,14 @@ function minerTimerFunction(){
         console.log(`You have ${minersAmount} miners.`);
             document.getElementById("cookieButton").textContent = (`Click for ${increaseCookies} cookies!`)
             document.getElementById("minerTimer").textContent = (`You have ${minersAmount} miners! ${minersCost} Cs.`)
-            document.getElementById("Cookies").textContent = (`Cookies: ${amountCookies.toFixed(2)}`)
-            minerCooking()
-
-       } 
+            document.getElementById("Cookies").textContent = `Cookies: ${amountCookies.toFixed(2)}`  
+        minerCooking()    
+       }
        else {
         console.log(`Need ${minersCost}`)
        }
        
-}
+    }
 
 function grandmaCooking(){
     amountCookies = amountCookies + (grandmaAmount*grandmaIncrease)
@@ -94,6 +111,25 @@ setInterval(function(){
     document.getElementById("Cookies").textContent = `Cookies: ${amountCookies.toFixed(2)}`
 }, 1000)
 }
+
+function upgradeMiners(){
+    if (minersAmount>=1){
+    if (amountCookies   >= minersCost){
+        amountCookies   = amountCookies-upgradeMinersCost
+        minersIncrease = minersIncrease+2
+        upgradeMinersCost = upgradeMinersCost*2
+        document.getElementById("upgradeMiners").textContent= (`Miners make ${minersIncrease.toFixed(2)} cookies. Price is ${upgradeMinersCost}.`)
+        console.log(`Each miner produces ${minersIncrease}`);
+        
+    }
+else {
+    console.log("Not enough cookies.");
+}
+    }
+else {
+    console.log("No miners");
+}}
+
 
 function upgradeGrandma(){
     if (amountCookies   >= grandmaUpgradeCost){
@@ -125,3 +161,4 @@ function upgradeGrandmaAndMiners(){
         
     }
 }
+

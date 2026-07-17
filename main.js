@@ -114,8 +114,9 @@ setInterval(function(){
 }
 
 function upgradeMiners(){ // Improve miner gain button. It is different from the Grandma version as it didn't work, but I have no idea why
+    // FIXED - It checked the cost for ANOTHER miner (minersCost) instead of UPGRADING the miner (upgradeMinersCost)
     if (minersAmount>=1){
-    if (amountCookies   >= minersCost){
+    if (amountCookies   >= upgradeMinersCost){
         amountCookies   = amountCookies-upgradeMinersCost
         minersIncrease = minersIncrease+2
         upgradeMinersCost = upgradeMinersCost*2

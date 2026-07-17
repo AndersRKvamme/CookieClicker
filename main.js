@@ -100,7 +100,6 @@ function upgradeGrandma(){
         
     }
 else {
-    console.log("sheeet");
-    
+    console.log("Not enough cookies.");
 }
     }

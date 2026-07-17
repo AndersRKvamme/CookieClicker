@@ -6,7 +6,9 @@ let cookieTimer     = 0
 let grandmaCost     = 10
 let grandmaAmount   = 0
 let grandmaIncrease = 1
-let areWorkers      = false
+let minersAmount    = 0
+let minersCost      = 50
+let minersIncrease   = 5
 
 function makeDonuts(){
     amountCookies = amountCookies+increaseCookies;
@@ -31,7 +33,7 @@ else{
 }
 }
 
-function cookieTimerFunction(){
+function grandmaTimerFunction(){
     if (amountCookies >= grandmaCost){
         amountCookies = amountCookies - grandmaCost
         grandmaAmount = grandmaAmount +1
@@ -50,6 +52,25 @@ function cookieTimerFunction(){
        
 }
 
+function minerTimerFunction(){
+    if (amountCookies >= minersCost){
+        amountCookies = amountCookies - minersCost
+        minersAmount = minersAmount +1
+        minersCost = minersCost*2
+        console.log(minersCost);
+        console.log(`You have ${minersAmount} miners.`);
+            document.getElementById("cookieButton").textContent = (`Click for ${increaseCookies} cookies!`)
+            document.getElementById("minerTimer").textContent = (`You have ${minersAmount} miners! ${minersCost} Cs.`)
+            document.getElementById("Cookies").textContent = `Cookies: ${amountCookies}`
+            minerCooking()
+
+       } 
+       else {
+        console.log(`Need ${minersCost}`)
+       }
+       
+}
+
 function grandmaCooking(){
     amountCookies = amountCookies + (grandmaAmount*grandmaIncrease)
     document.getElementById("Cookies").textContent = `Cookies: ${amountCookies}`
@@ -58,3 +79,13 @@ setInterval(function(){
     document.getElementById("Cookies").textContent = `Cookies: ${amountCookies}`
 }, 1000)
 }
+
+function minerCooking(){
+    amountCookies = amountCookies + (minersAmount*minersIncrease)
+    document.getElementById("Cookies").textContent = `Cookies: ${amountCookies}`
+setInterval(function(){
+    amountCookies = amountCookies + (minersAmount*minersIncrease)   
+    document.getElementById("Cookies").textContent = `Cookies: ${amountCookies}`
+}, 1000)
+}
+

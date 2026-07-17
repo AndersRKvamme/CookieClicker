@@ -12,7 +12,7 @@ let minersAmount    = 0;
 let minersCost      = 50;
 let minersIncrease  = 2;
 let roundedCookies  = 0;
-
+let upgradeGraAMinCost  = 800;
 
 
 function makeDonuts(){
@@ -108,3 +108,20 @@ else {
     console.log("Not enough cookies.");
 }
     }
+
+function upgradeGrandmaAndMiners(){
+    if (amountCookies >= upgradeGraAMinCost){
+        amountCookies   = amountCookies - upgradeGraAMinCost
+        upgradeGraAMinCost = upgradeGraAMinCost*2
+        grandmaIncrease = grandmaIncrease +2.1
+        minersIncrease  = minersIncrease +14
+            document.getElementById("upgradeGrandma").textContent= (`Grandmas make ${grandmaIncrease.toFixed(2)} cookies. Price is ${grandmaUpgradeCost}.`)
+            document.getElementById("cookieButton").textContent = (`Click for ${increaseCookies} cookies!`)
+            document.getElementById("minerTimer").textContent = (`You have ${minersAmount} miners! ${minersCost} Cs.`)
+            document.getElementById("Cookies").textContent = (`Cookies: ${amountCookies.toFixed(2)}`)
+    }
+    else {
+        console.log("You can't afford to upgrade both.");
+        
+    }
+}

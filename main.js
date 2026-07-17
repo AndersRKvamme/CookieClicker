@@ -100,7 +100,7 @@ function upgradeGrandma(){
         amountCookies   = amountCookies-grandmaUpgradeCost
         grandmaIncrease = grandmaIncrease+0.3
         grandmaUpgradeCost = grandmaUpgradeCost*2
-        document.getElementById("upgradeGrandma").textContent= (`Grandmas make ${grandmaIncrease} cookies. Price is ${grandmaUpgradeCost}.`)
+        document.getElementById("upgradeGrandma").textContent= (`Grandmas make ${grandmaIncrease.toFixed(2)} cookies. Price is ${grandmaUpgradeCost}.`)
         console.log(`Each Grandma produces ${grandmaIncrease}`);
         
     }

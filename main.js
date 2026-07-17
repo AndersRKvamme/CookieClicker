@@ -156,7 +156,7 @@ function upgradeGrandmaAndMiners(){
         minersIncrease  = minersIncrease +14
             document.getElementById("upgradeGrandma").textContent= (`Grandmas make ${grandmaIncrease.toFixed(2)} cookies. Price is ${grandmaUpgradeCost}.`)
             document.getElementById("cookieButton").textContent = (`Click for ${increaseCookies} cookies!`)
-            document.getElementById("minerTimer").textContent = (`You have ${minersAmount} miners! ${minersCost} Cs.`)
+            document.getElementById("minerTimer").textContent = (`You have ${minersAmount} miners! They make ${minersIncrease} cookies!${minersCost} Cs.`)
             document.getElementById("Cookies").textContent = (`Cookies: ${amountCookies.toFixed(2)}`)
     }
     else {

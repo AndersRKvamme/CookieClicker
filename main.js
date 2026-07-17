@@ -5,7 +5,9 @@ let clickCost       = 4
 let cookieTimer     = 0
 let grandmaCost     = 10
 let grandmaAmount   = 0
+// let grandmaIncrease = 1
 let grandmaIncrease = 1
+let grandmaUpgradeCost = 150
 let minersAmount    = 0
 let minersCost      = 50
 let minersIncrease   = 5
@@ -61,7 +63,7 @@ function minerTimerFunction(){
         console.log(`You have ${minersAmount} miners.`);
             document.getElementById("cookieButton").textContent = (`Click for ${increaseCookies} cookies!`)
             document.getElementById("minerTimer").textContent = (`You have ${minersAmount} miners! ${minersCost} Cs.`)
-            document.getElementById("Cookies").textContent = `Cookies: ${amountCookies}`
+            document.getElementById("Cookies").textContent = (`Cookies: ${amountCookies}`)
             minerCooking()
 
        } 
@@ -89,3 +91,16 @@ setInterval(function(){
 }, 1000)
 }
 
+function upgradeGrandma(){
+    if (amountCookies   >= grandmaUpgradeCost){
+        amountCookies   = amountCookies-grandmaUpgradeCost
+        grandmaIncrease = grandmaIncrease+1
+        document.getElementById("upgradeGrandma").textContent= (`Grandmas make ${grandmaIncrease} cookies. Price is ${grandmaUpgradeCost}.`)
+        console.log(`Each Grandma produces ${grandmaIncrease}`);
+        
+    }
+else {
+    console.log("sheeet");
+    
+}
+    }

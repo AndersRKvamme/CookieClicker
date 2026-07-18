@@ -15,6 +15,9 @@ let roundedCookies  = 0;
 let upgradeGraAMinCost  = 800;
 let upgradeMinersCost = 200;
 let clickPower1Cost = 10
+let cookiesPerSecondNow = amountCookies // Delete? 
+let cookiesPerSecondCPS = 0             // Delete?
+
 
 function clickPower1(){ // First PROPER upgrade. Cost 10. Req Cookies 100. Temp before C per second
     if (amountCookies >= clickPower1Cost & amountCookies > 100) {
@@ -34,6 +37,7 @@ function makeDonuts(){ // the default make cookie function
     amountCookies = amountCookies+increaseCookies;
     document.getElementById("Cookies").textContent = `Cookies: ${amountCookies.toFixed(2)}`
     console.log(amountCookies)
+
 }
 
 function cookieIncreaseFunction(){ // Clicking power
@@ -113,6 +117,7 @@ function grandmaCooking(){ // Timer function, referenced in grandmaTimerFunction
     document.getElementById("Cookies").textContent = `Cookies: ${amountCookies.toFixed(2)}`
 setInterval(function(){
     amountCookies = amountCookies + grandmaIncrease // Because of +Increase*Amount instead of + Increase
+    
     document.getElementById("Cookies").textContent = `Cookies: ${amountCookies.toFixed(2)}`
 }, 1000)
 

@@ -20,3 +20,37 @@
 //     }
 // }
 
+// setinterval check cookies per second test
+
+// function cookiePerSecond(){
+//     cookiesPerSecond = setInterval(function(){
+//         cookiesPerSecond = amountCookies
+//     }, 1000)
+//         document.getElementById("cookiesPerSecond").textContent=`Cookies per second: ${cookiePerSecond.toFixed(2)}`
+// }
+
+// HUSK Å GJØRE SET TO TRUE OG KJØR HVIS FALSE PÅ CPS
+
+// function cookiePerSecond(){ // how the fuck
+//     cookiesPerSecondNow = amountCookies
+//     cookiesPerSecondCPS = setInterval(function(){
+        
+//     }, 1000)
+//         cookiesPerSecondCPS = cookiesPerSecondCPS / cookiesPerSecondNow
+//             document.getElementById("cps").textContent= `Cookies per second: ${cookiesPerSecondCPS.toFixed(2)}`
+
+// }
+
+
+// Make a list of two numbers - add a static cookieAmount as 0 (0 is 1st in list)
+// Add in cookieAmount after interval ass 1 (2nd)
+// Divide the two -> set cookiesPerSecondNow as 0 / 1?
+// function cookiePerSecond(){ // how the fuck ????
+//     cookiesPerSecondNow = amountCookies
+//         setInterval(function(){
+//                 cookiesPerSecondCPS = cookiesPerSecondNow 
+//                     document.getElementById("cps").textContent= `Cookies per second: ${cookiesPerSecondCPS.toFixed(2)}`
+
+//     }, 1000)
+
+// }

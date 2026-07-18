@@ -112,7 +112,7 @@ function grandmaCooking(){ // Timer function, referenced in grandmaTimerFunction
     amountCookies = amountCookies + grandmaIncrease // Fixed a bug where I doubled the effectivesness
     document.getElementById("Cookies").textContent = `Cookies: ${amountCookies.toFixed(2)}`
 setInterval(function(){
-    amountCookies = amountCookies + grandmaIncrease // Because of Increase*Amount instead of + Increase
+    amountCookies = amountCookies + grandmaIncrease // Because of +Increase*Amount instead of + Increase
     document.getElementById("Cookies").textContent = `Cookies: ${amountCookies.toFixed(2)}`
 }, 1000)
 
@@ -122,7 +122,7 @@ function minerCooking(){ // Timer function, referenced in minerTimerFunction() t
     amountCookies = amountCookies + minersIncrease // Fixed a bug where I doubled the effectivesness
     document.getElementById("Cookies").textContent = `Cookies: ${amountCookies.toFixed(2)}`
 setInterval(function(){
-    amountCookies = amountCookies + minersIncrease  // Because of Increase*Amount instead of + Increase
+    amountCookies = amountCookies + minersIncrease  // Because of +Increase*Amount instead of + Increase
     document.getElementById("Cookies").textContent = `Cookies: ${amountCookies.toFixed(2)}`
 }, 1000)
 }

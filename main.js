@@ -14,7 +14,21 @@ let minersIncrease  = 2;
 let roundedCookies  = 0;
 let upgradeGraAMinCost  = 800;
 let upgradeMinersCost = 200;
+let clickPower1Cost = 10
 
+function clickPower1(){ // First PROPER upgrade. Cost 10. Req Cookies 100. Temp before C per second
+    if (amountCookies >= clickPower1Cost & amountCookies > 100) {
+        increaseCookies = increaseCookies +1
+        amountCookies = amountCookies - clickPower1Cost
+            document.getElementById("Cookies").textContent = `Cookies: ${amountCookies.toFixed(2)}`
+            console.log(amountCookies)
+        document.getElementById("clickPower1").remove();
+    }
+    else {
+        console.log("Cost is 10, req 100 cookies");
+        
+    }
+}
 
 function makeDonuts(){ // the default make cookie function
     amountCookies = amountCookies+increaseCookies;
@@ -164,4 +178,3 @@ function upgradeGrandmaAndMiners(){
         
     }
 }
-

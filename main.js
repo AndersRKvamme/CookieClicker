@@ -15,8 +15,11 @@ let roundedCookies  = 0;
 let upgradeGraAMinCost  = 800;
 let upgradeMinersCost = 200;
 let clickPower1Cost = 10
-let cookiesPerSecondNow = amountCookies // Delete? 
+let cookiesPerSecondNow = 0// Delete? 
 let cookiesPerSecondCPS = 0             // Delete?
+
+
+
 
 
 function clickPower1(){ // First PROPER upgrade. Cost 10. Req Cookies 100. Temp before C per second
@@ -120,7 +123,7 @@ setInterval(function(){
     
     document.getElementById("Cookies").textContent = `Cookies: ${amountCookies.toFixed(2)}`
 }, 1000)
-
+cookiePerSecond() // TEMP 134!!
 }
 
 function minerCooking(){ // Timer function, referenced in minerTimerFunction() to start the interval and to add more miners

@@ -48,7 +48,17 @@
 // function cookiePerSecond(){ // how the fuck ????
 //     cookiesPerSecondNow = amountCookies
 //         setInterval(function(){
-//                 cookiesPerSecondCPS = cookiesPerSecondNow 
+//                 cookiesPerSecondCPS = cookiesPerSecondNow / amountCookies 
+//                     document.getElementById("cps").textContent= `Cookies per second: ${cookiesPerSecondCPS.toFixed(2)}`
+
+//     }, 1000)
+
+// }
+
+// function cookiePerSecond(){ // how the fuck ???? // TEMP 134!!
+//     cookiesPerSecondNow = amountCookies
+//         setInterval(function(){
+//                 cookiesPerSecondCPS = (cookiesPerSecondNow) 
 //                     document.getElementById("cps").textContent= `Cookies per second: ${cookiesPerSecondCPS.toFixed(2)}`
 
 //     }, 1000)

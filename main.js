@@ -1,23 +1,23 @@
 // console.log ("Hello log.js!")
-let amountCookies   = 0;
-let increaseCookies = 1;
-let clickCost       = 4;
-let cookieTimer     = 0;
-let grandmaCost     = 10;
-let grandmaAmount   = 0;
-// let grandmaIncrease = 1
-let grandmaIncrease = 0.3;
-let grandmaUpgradeCost = 150;
-let minersAmount    = 0;
-let minersCost      = 50;
-let minersIncrease  = 2;
-let roundedCookies  = 0;
-let upgradeGraAMinCost  = 800;
-let upgradeMinersCost = 200;
-let clickPower1Cost = 10
-let cookiesPerSecondNow = 0 // Delete? 
-let cookiesPerSecondCPS = 0 // Delete?
-let grandmaPower1Cost = 350
+let amountCookies   = 0;        // Amount of cookies you have
+let increaseCookies = 1;        // Cookies gained when clicked
+let clickCost       = 4;        // Cost of upgrading (to be deprecated)
+let cookieTimer     = 0;        // Not used?
+let grandmaCost     = 10;       // Cost to purchase a grandma
+let grandmaAmount   = 0;        // Amount of grandma you have
+let grandmaIncrease = 0.3;      // Amount of cookies grandma's create
+let grandmaUpgradeCost = 150;   // Cost of upgrading grandmas
+let minersAmount    = 0;        // Amount of miners you have
+let minersCost      = 50;       // Cost to purchase miners
+let minersIncrease  = 2;        // Amount of cookies make
+let roundedCookies  = 0;        // Not used?
+let upgradeGraAMinCost  = 800;  // Upgrade both miners and Grandma cost tester
+let upgradeMinersCost = 200;    // Upgrade miners cost
+let clickPower1Cost = 10        // 1st clicking power cost
+let cookiesPerSecondNow = 0     // Delete? 
+let cookiesPerSecondCPS = 0     // Delete?
+let grandmaPower1Cost = 350     // 1st grandma upgrade cost
+
 
 
 function grandmaPower1(){ // Grandma upgrade. Cost 350, req 400. 
@@ -52,7 +52,6 @@ function makeDonuts(){ // the default make cookie function
     amountCookies = amountCookies+increaseCookies;
     document.getElementById("Cookies").textContent = `Cookies: ${amountCookies.toFixed(2)}`
     console.log(amountCookies)
-
 }
 
 function cookieIncreaseFunction(){ // Clicking power

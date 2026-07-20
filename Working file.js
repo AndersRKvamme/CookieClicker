@@ -3,6 +3,16 @@
 // edited in the main.
 
 
+//Show and Hide test
+
+// function hideTest (hideTest2){
+//     let hider = document.getElementById(hideTest2);
+//     Element.style.display ='button'    
+// }
+
+
+
+
 
 // First iteration of actual upgrade - Already implemented (without CPS)
 // Intenion for the future is to copy paste this with better upgrades.

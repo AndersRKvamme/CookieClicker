@@ -78,3 +78,22 @@
         
 //     }
 // }
+
+// Moved from main.js 
+// former iteration of it, cba going through to see which version to keep so commentating it out just in casze
+// function minerTimerFunction(){
+//     if (amountCookies >= minersCost){
+//         amountCookies = amountCookies - minersCost
+//         minersAmount = minersAmount +1
+//         minersCost = minersCost*2
+//         console.log(minersCost);
+//         console.log(`You have ${minersAmount} miners.`);
+//             document.getElementById("cookieButton").textContent = (`Click for ${increaseCookies} cookies!`)
+//             document.getElementById("minerTimer").textContent = (`You have ${minersAmount} miners! ${minersCost} Cs.`)
+//             document.getElementById("Cookies").textContent = (`Cookies: ${amountCookies.toFixed(2)}`)
+//        } 
+//        else {
+//         console.log(`Need ${minersCost}`)
+//        }
+       
+// }

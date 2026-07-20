@@ -15,12 +15,24 @@ let roundedCookies  = 0;
 let upgradeGraAMinCost  = 800;
 let upgradeMinersCost = 200;
 let clickPower1Cost = 10
-let cookiesPerSecondNow = 0// Delete? 
-let cookiesPerSecondCPS = 0             // Delete?
+let cookiesPerSecondNow = 0 // Delete? 
+let cookiesPerSecondCPS = 0 // Delete?
+let grandmaPower1Cost = 350
 
 
-
-
+function grandmaPower1(){ // Grandma upgrade. Cost 350, req 400. 
+    if (amountCookies >= grandmaPower1Cost & amountCookies > 400) {
+        grandmaIncrease = grandmaIncrease +1.1
+        amountCookies = amountCookies - grandmaPower1Cost
+            document.getElementById("Cookies").textContent = `Cookies: ${amountCookies.toFixed(2)}`
+            console.log(amountCookies)
+        document.getElementById("grandmaPower1").remove();
+    }
+    else {
+        console.log("Cost is 350, req 400 cookies");
+        
+    }
+}
 
 function clickPower1(){ // First PROPER upgrade. Cost 10. Req Cookies 100. Temp before C per second
     if (amountCookies >= clickPower1Cost & amountCookies > 100) {
@@ -123,7 +135,7 @@ setInterval(function(){
     
     document.getElementById("Cookies").textContent = `Cookies: ${amountCookies.toFixed(2)}`
 }, 1000)
-cookiePerSecond() // TEMP 134!!
+// cookiePerSecond() // TEMP 134!!
 }
 
 function minerCooking(){ // Timer function, referenced in minerTimerFunction() to start the interval and to add more miners

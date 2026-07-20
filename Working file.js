@@ -64,3 +64,17 @@
 //     }, 1000)
 
 // }
+
+// function grandmaPower1(){ // First PROPER upgrade. Cost 10. Req Cookies 100. Temp before C per second
+//     if (amountCookies >= grandmaPower1Cost & amountCookies > 100) {
+//         increaseCookies = increaseCookies +1.1
+//         amountCookies = amountCookies - grandmaPower1Cost
+//             document.getElementById("Cookies").textContent = `Cookies: ${amountCookies.toFixed(2)}`
+//             console.log(amountCookies)
+//         document.getElementById("grandmaPower1").remove();
+//     }
+//     else {
+//         console.log("Cost is 10, req 100 cookies");
+        
+//     }
+// }

@@ -24,12 +24,13 @@ let grandmaPower1Cost   = 350       // 1st grandma upgrade cost
 // TODO: Actual CSS work
 
 function grandmaPower1(){ // Grandma upgrade. Cost 350, req 400. 
-    if (amountBrann >= grandmaPower1Cost & amountBrann > 400) {
+    if (amountBrann >= grandmaPower1Cost & amountBrann >= 400) {
         grandmaIncrease = grandmaIncrease +1.1
         amountBrann = amountBrann - grandmaPower1Cost
             document.getElementById("BrannStickers").textContent = `Brann Stickers: ${amountBrann.toFixed(2)}`
             console.log(amountBrann)
         document.getElementById("grandmaPower1").remove();
+        document.getElementById("grandmaPowerDummy").remove();
     }
     else {
         console.log("Cost is 350, req 400 Brann stickers");
@@ -38,12 +39,13 @@ function grandmaPower1(){ // Grandma upgrade. Cost 350, req 400.
 }
 
 function clickPower1(){ // First PROPER upgrade. Cost 10. Req Brann stickers 100. Temp before C per second
-    if (amountBrann >= clickPower1Cost & amountBrann > 100) {
+    if (amountBrann >= clickPower1Cost & amountBrann >= 100) {
         increaseBrann = increaseBrann +1
         amountBrann = amountBrann - clickPower1Cost
         document.getElementById("BrannStickers").textContent = `Brann: ${amountBrann.toFixed(2)}`
             console.log(amountBrann)
         document.getElementById("clickPower1").remove();
+        document.getElementById("clickPowerDummy").remove();
     }
     else {
         console.log("Cost is 10, req 100 Brann stickers");

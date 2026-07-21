@@ -18,7 +18,10 @@ let brannsPerSecondNow  = 0         // Delete?
 let brannPerSecondCPS   = 0         // Delete?
 let grandmaPower1Cost   = 350       // 1st grandma upgrade cost
 
-
+// TODO: Rework miners and grandmas
+// TODO: Get cps/StickersPerSecond working
+// TODO: Upgrades
+// TODO: Actual CSS work
 
 function grandmaPower1(){ // Grandma upgrade. Cost 350, req 400. 
     if (amountBrann >= grandmaPower1Cost & amountBrann > 400) {

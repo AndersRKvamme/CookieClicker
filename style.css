@@ -10,7 +10,7 @@ h3 {
 
 /* 100% GOOGLED */
 .brannLogo{ 
-    width: 200px;
+    width: 15em;
     cursor: pointer;
     transition: transform 0.1s ease;
 }

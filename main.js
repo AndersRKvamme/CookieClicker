@@ -22,9 +22,10 @@ let grandmaPower1Cost   = 350       // 1st grandma upgrade cost
 // TODO: Get cps/StickersPerSecond working
 // TODO: Upgrades
 // TODO: Actual CSS work
+// TODO: Grid system will not work in the longterm.
 
 function grandmaPower1(){ // Grandma upgrade. Cost 350, req 400. 
-    if (amountBrann >= grandmaPower1Cost & amountBrann >= 400) {
+    if (amountBrann >= grandmaPower1Cost && amountBrann >= 400) {
         grandmaIncrease = grandmaIncrease +1.1
         amountBrann = amountBrann - grandmaPower1Cost
             document.getElementById("BrannStickers").textContent = `Brann Stickers: ${amountBrann.toFixed(2)}`
@@ -39,7 +40,7 @@ function grandmaPower1(){ // Grandma upgrade. Cost 350, req 400.
 }
 
 function clickPower1(){ // First PROPER upgrade. Cost 10. Req Brann stickers 100. Temp before C per second
-    if (amountBrann >= clickPower1Cost & amountBrann >= 100) {
+    if (amountBrann >= clickPower1Cost && amountBrann >= 100) {
         increaseBrann = increaseBrann +1
         amountBrann = amountBrann - clickPower1Cost
         document.getElementById("BrannStickers").textContent = `Brann: ${amountBrann.toFixed(2)}`

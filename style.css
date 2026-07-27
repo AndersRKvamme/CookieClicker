@@ -15,7 +15,17 @@ h3 {
     transition: transform 0.1s ease;
 }
 
+.kniksenButton{ 
+    width: 5em;
+    cursor: pointer;
+    transition: transform 0.1s ease;
+}
+
 .brannLogo:active {
+    animation: pumpEffect 0.2s ease-in-out;
+}
+
+.kniksenButton:active {
     animation: pumpEffect 0.2s ease-in-out;
 }
 

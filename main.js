@@ -18,13 +18,21 @@ let brannsPerSecondNow  = 0         // Delete?
 let brannPerSecondCPS   = 0         // Delete?
 let grandmaPower1Cost   = 350       // 1st grandma upgrade cost
 
+//Knisken values
+let kniksenAmount       = 0         // Amount of Kniksen stickers producers
+let kniksenCost         = 40        // Cost for Kniksen Sticker producerr
+let kniksenIncrease     = 1         // Amount prod increase
+let kniksenUpgrade1     = 150       // Cost to upgrade Kniksen producers
+
 // TODO: Rework miners and grandmas
 // TODO: Get cps/StickersPerSecond working
 // TODO: Upgrades
 // TODO: Actual CSS work
+// TODO: Grid system will not work in the longterm.
+// TODO: Slow game down
 
 function grandmaPower1(){ // Grandma upgrade. Cost 350, req 400. 
-    if (amountBrann >= grandmaPower1Cost & amountBrann >= 400) {
+    if (amountBrann >= grandmaPower1Cost && amountBrann >= 400) {
         grandmaIncrease = grandmaIncrease +1.1
         amountBrann = amountBrann - grandmaPower1Cost
             document.getElementById("BrannStickers").textContent = `Brann Stickers: ${amountBrann.toFixed(2)}`
@@ -38,8 +46,13 @@ function grandmaPower1(){ // Grandma upgrade. Cost 350, req 400.
     }
 }
 
+function kniksenPower1(){ //Kniksen sticker production upgrade 1. Cost 150, req 200
+
+}
+
+
 function clickPower1(){ // First PROPER upgrade. Cost 10. Req Brann stickers 100. Temp before C per second
-    if (amountBrann >= clickPower1Cost & amountBrann >= 100) {
+    if (amountBrann >= clickPower1Cost && amountBrann >= 100) {
         increaseBrann = increaseBrann +1
         amountBrann = amountBrann - clickPower1Cost
         document.getElementById("BrannStickers").textContent = `Brann: ${amountBrann.toFixed(2)}`
@@ -113,6 +126,31 @@ function minerTimerFunction(){ // Click on miner button function
        }
        
     }
+
+function kniksenTimerFunction(){
+    if (amountBrann >= kniksenCost){
+        amountBrann = amountBrann - kniksenCost
+        kniksenAmount = kniksenAmount +1
+        kniksenCost = kniksenCost*2
+        console.log(`You have ${kniksenAmount} kniksen sticker producers`);
+        console.log(`Cost for a new Kniksen is ${kniksenCost}.`);
+        kniksenProduction()
+    }
+    else {
+        console.log(`Need ${kniksenCost} stickers!`);
+        
+    }
+}
+
+function kniksenProduction(){ // The timer function for kniksen production
+    amountBrann = amountBrann + kniksenIncrease
+    document.getElementById("BrannStickers").textContent = `Brann stickers: ${amountBrann.toFixed(2)}`
+        setInterval(function(){
+            amountBrann = amountBrann + kniksenIncrease
+            document.getElementById("BrannStickers").textContent = `Brann stickers: ${amountBrann.toFixed(2)}`
+        },1000) //Intervals to be slowed down in the future (bigger number)
+}
+
 
 function grandmaCooking(){ // Timer function, referenced in grandmaTimerFunction() to start the interval and to add more grandmas
     amountBrann = amountBrann + grandmaIncrease // Fixed a bug where I doubled the effectivesness

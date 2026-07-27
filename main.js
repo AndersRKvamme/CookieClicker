@@ -46,7 +46,7 @@ function grandmaPower1(){ // Grandma upgrade. Cost 350, req 400.
     }
 }
 
-function kniksenPower1(){ //Kniksen sticker production upgrade 1. Cost 150, req 200
+function kniksenPower1(){ //Kniksen sticker production upgrade 1. TODO
 
 }
 

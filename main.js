@@ -18,6 +18,12 @@ let brannsPerSecondNow  = 0         // Delete?
 let brannPerSecondCPS   = 0         // Delete?
 let grandmaPower1Cost   = 350       // 1st grandma upgrade cost
 
+//Knisken values
+let kniksenAmount       = 0         // Amount of Kniksen stickers producers
+let kniksenCost         = 40        // Cost for Kniksen Sticker producerr
+let kniksenIncrease     = 1         // Amount prod increase
+let kniksenUpgrade1     = 150       // Cost to upgrade Kniksen producers
+
 // TODO: Rework miners and grandmas
 // TODO: Get cps/StickersPerSecond working
 // TODO: Upgrades

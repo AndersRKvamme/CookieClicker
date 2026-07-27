@@ -39,6 +39,11 @@ function grandmaPower1(){ // Grandma upgrade. Cost 350, req 400.
     }
 }
 
+function kniksenPower1(){ //Kniksen sticker production upgrade 1. Cost 150, req 200
+
+}
+
+
 function clickPower1(){ // First PROPER upgrade. Cost 10. Req Brann stickers 100. Temp before C per second
     if (amountBrann >= clickPower1Cost && amountBrann >= 100) {
         increaseBrann = increaseBrann +1

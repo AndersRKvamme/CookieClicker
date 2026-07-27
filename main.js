@@ -29,6 +29,7 @@ let kniksenUpgrade1     = 150       // Cost to upgrade Kniksen producers
 // TODO: Upgrades
 // TODO: Actual CSS work
 // TODO: Grid system will not work in the longterm.
+// TODO: Slow game down
 
 function grandmaPower1(){ // Grandma upgrade. Cost 350, req 400. 
     if (amountBrann >= grandmaPower1Cost && amountBrann >= 400) {
@@ -125,6 +126,31 @@ function minerTimerFunction(){ // Click on miner button function
        }
        
     }
+
+function kniksenTimerFunction(){
+    if (amountBrann >= kniksenCost){
+        amountBrann = amountBrann - kniksenCost
+        kniksenAmount = kniksenAmount +1
+        kniksenCost = kniksenCost*2
+        console.log(`You have ${kniksenAmount} kniksen sticker producers`);
+        console.log(`Cost for a new Kniksen is ${kniksenCost}.`);
+        kniksenProduction()
+    }
+    else {
+        console.log(`Need ${kniksenCost} stickers!`);
+        
+    }
+}
+
+function kniksenProduction(){ // The timer function for kniksen production
+    amountBrann = amountBrann + kniksenIncrease
+    document.getElementById("BrannStickers").textContent = `Brann stickers: ${amountBrann.toFixed(2)}`
+        setInterval(function(){
+            amountBrann = amountBrann + kniksenIncrease
+            document.getElementById("BrannStickers").textContent = `Brann stickers: ${amountBrann.toFixed(2)}`
+        },1000) //Intervals to be slowed down in the future (bigger number)
+}
+
 
 function grandmaCooking(){ // Timer function, referenced in grandmaTimerFunction() to start the interval and to add more grandmas
     amountBrann = amountBrann + grandmaIncrease // Fixed a bug where I doubled the effectivesness
